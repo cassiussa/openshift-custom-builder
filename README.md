@@ -24,7 +24,9 @@ Table 1. Custom Builder Environment Variables
 `PUSH_DOCKERCFG_PATH`  The path to the Docker credentials for running a docker push operation.
 
 `DOCKER_SOCKET`        Specifies the path to the Docker socket, if exposing the Docker socket was enabled in the build configuration (if exposeDockerSocket was set to true.)
-Custom Builder Workflow
+
+
+### Custom Builder Workflow
 
 
 Although Custom builder image authors have great flexibility in defining the build process, your builder image must still adhere to the following required steps necessary for seamlessly running a build inside of OpenShift Container Platform:
