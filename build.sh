@@ -56,7 +56,7 @@ if [ -n "${SOURCE_REF}" ]; then
     exit 1
   fi
   popd
-  docker build --rm -t "${TAG}" "${BUILD_DIR}"
+  docker build --rm -t "${TAG}" "${BUILD_DIR}" -f "${DOCKER_FILE_PATH}"
 else
   docker build --rm -t "${TAG}" "${SOURCE_REPOSITORY}"
 fi
