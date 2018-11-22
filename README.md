@@ -39,5 +39,38 @@ Although Custom builder image authors have great flexibility in defining the bui
 3.    If your build produces an image, push it to the build’s output location if it is defined. Other output locations can be passed with environment variables.
 
 
+### Custom Builds
+
+The custom build strategy is very similar to *Docker build* strategy, but users might customize the builder image that will be used for build execution. The *Docker build* uses [openshift/origin-docker-builder](https://hub.docker.com/r/openshift/origin-docker-builder/) image by default. Using your own builder image allows you to customize your build process.
+
+An example JSON of a custom build strategy:
+
+```json
+"strategy": {
+  "type": "Custom",
+    "customStrategy": {
+      "image": "my-custom-builder-image",
+      "exposeDockerSocket": true,
+      "env": [
+        { "name": "EXPOSE_PORT", "value": "8080" }
+      ]
+    }
+}
+```
+
+The `exposeDockerSocket` option will mount the Docker socket from host into your
+builder container and allows you to execute the `docker build` and `docker push` commands.
+Note that this might be restricted by the administrator in future.
+
+The `env` option allows you to specify additional environment variables that will
+be passed to the builder container environment. By default, these environment
+variables are passed to the build container:
+
+* `$BUILD` contains the JSON representation of the Build
+* `$OUTPUT_IMAGE` contains the output Docker image name as configured in Build
+* `$OUTPUT_REGISTRY` contains the output Docker registry as configured in Build
+* `$SOURCE_URI` contains the URL to the source code repository
+* `$SOURCE_REF` contains the branch, tag or ref for source repository
+* `$DOCKER_SOCKET` contains full path to the Docker socket
 
 
