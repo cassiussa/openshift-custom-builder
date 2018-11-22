@@ -1,7 +1,8 @@
 # Custom Builder Image
 
 Upon invocation, a custom builder image will receive the following environment variables with the information needed to proceed with the build:
-Table 1. Custom Builder Environment Variables
+
+**Table 1. Custom Builder Environment Variables**
 
 ### Variable Descriptions
 
