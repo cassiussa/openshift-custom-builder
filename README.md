@@ -3,7 +3,7 @@
 Upon invocation, a custom builder image will receive the following environment variables with the information needed to proceed with the build:
 Table 1. Custom Builder Environment Variables
 
-Variable Name 	Description
+### Variable Descriptions
 
 `BUILD`                The entire serialized JSON of the Build object definition. If you need to use a specific API version for serialization, you can set the buildAPIVersion parameter in the custom strategy specification of the build configuration.
 
