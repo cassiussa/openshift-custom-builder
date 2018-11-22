@@ -6,25 +6,20 @@ Upon invocation, a custom builder image will receive the following environment v
 
 ### Variable Descriptions
 
-`BUILD`                The entire serialized JSON of the Build object definition. If you need to use a specific API version for serialization, you can set the buildAPIVersion parameter in the custom strategy specification of the build configuration.
+The `env` option allows you to specify additional environment variables that will
+be passed to the builder container environment. By default, these environment
+variables are passed to the build container:
 
-`SOURCE_REPOSITORY`    The URL of a Git repository with source to be built.
-
-`SOURCE_URI`           Uses the same value as SOURCE_REPOSITORY. Either can be used.
-
-`SOURCE_CONTEXT_DIR`   Specifies the subdirectory of the Git repository to be used when building. Only present if defined.
-
-`SOURCE_REF`           The Git reference to be built.
-
-`ORIGIN_VERSION`       The version of the OpenShift Container Platform master that created this build object.
-
-`OUTPUT_REGISTRY`      The Docker registry to push the image to.
-
-`OUTPUT_IMAGE`         The Docker tag name for the image being built.
-
-`PUSH_DOCKERCFG_PATH`  The path to the Docker credentials for running a docker push operation.
-
-`DOCKER_SOCKET`        Specifies the path to the Docker socket, if exposing the Docker socket was enabled in the build configuration (if exposeDockerSocket was set to true.)
+* `$BUILD`                The entire serialized JSON of the Build object definition. If you need to use a specific API version for serialization, you can set the buildAPIVersion parameter in the custom strategy specification of the build configuration.
+* `$SOURCE_REPOSITORY`    The URL of a Git repository with source to be built.
+* `$SOURCE_URI`           Uses the same value as SOURCE_REPOSITORY. Either can be used.
+* `$SOURCE_CONTEXT_DIR`   Specifies the subdirectory of the Git repository to be used when building. Only present if defined.
+* `$SOURCE_REF`           The Git reference to be built.
+* `$ORIGIN_VERSION`       The version of the OpenShift Container Platform master that created this build object.
+* `$OUTPUT_REGISTRY`      The Docker registry to push the image to.
+* `$OUTPUT_IMAGE`         The Docker tag name for the image being built.
+* `$PUSH_DOCKERCFG_PATH`  The path to the Docker credentials for running a docker push operation.
+* `$DOCKER_SOCKET`        Specifies the path to the Docker socket, if exposing the Docker socket was enabled in the build configuration (if exposeDockerSocket was set to true.)
 
 
 ### Custom Builder Workflow
@@ -61,16 +56,4 @@ An example JSON of a custom build strategy:
 The `exposeDockerSocket` option will mount the Docker socket from host into your
 builder container and allows you to execute the `docker build` and `docker push` commands.
 Note that this might be restricted by the administrator in future.
-
-The `env` option allows you to specify additional environment variables that will
-be passed to the builder container environment. By default, these environment
-variables are passed to the build container:
-
-* `$BUILD` contains the JSON representation of the Build
-* `$OUTPUT_IMAGE` contains the output Docker image name as configured in Build
-* `$OUTPUT_REGISTRY` contains the output Docker registry as configured in Build
-* `$SOURCE_URI` contains the URL to the source code repository
-* `$SOURCE_REF` contains the branch, tag or ref for source repository
-* `$DOCKER_SOCKET` contains full path to the Docker socket
-
 
