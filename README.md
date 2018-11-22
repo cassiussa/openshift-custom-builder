@@ -54,6 +54,21 @@ An example JSON of a custom build strategy:
 }
 ```
 
+An example YAML of a custom build strategy:
+
+```yaml
+  strategy:
+    customStrategy:
+      env:
+        - name: EXPOSE_PORT
+          value: '8080'
+      exposeDockerSocket: true
+      from:
+        kind: DockerImage
+        name: images/custom-builder
+    type: Custom
+```
+
 The `exposeDockerSocket` option will mount the Docker socket from host into your
 builder container and allows you to execute the `docker build` and `docker push` commands.
 Note that this might be restricted by the administrator in future.
