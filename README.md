@@ -65,7 +65,7 @@ An example YAML of a custom build strategy:
       exposeDockerSocket: true
       from:
         kind: DockerImage
-        name: images/custom-builder
+        name: my-custom-builder-image
     type: Custom
 ```
 
