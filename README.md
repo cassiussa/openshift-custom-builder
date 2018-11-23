@@ -30,7 +30,7 @@ variables are passed to the build container:
 
 Although Custom builder image authors have great flexibility in defining the build process, your builder image must still adhere to the following required steps necessary for seamlessly running a build inside of OpenShift Container Platform:
 
-1.    The Build object definition contains all the necessary information about input parameters for the build.
+1.    The `Build` object definition contains all the necessary information about input parameters for the build.
 
 2.    Run the build process.
 
@@ -56,7 +56,7 @@ An example JSON of a custom build strategy:
 }
 ```
 
-An example YAML of a custom build strategy:
+An example YAML of a custom build strategy, using `DOCKER_FILE_PATH` to specify the name of the Dockerfile (similar to `dockerfilePath` when using `dockerStrategy`:
 
 ```yaml
   strategy:
@@ -64,6 +64,8 @@ An example YAML of a custom build strategy:
       env:
         - name: EXPOSE_PORT
           value: '8080'
+        - name: DOCKER_FILE_PATH
+          value: 
       exposeDockerSocket: true
       from:
         kind: DockerImage
@@ -74,4 +76,5 @@ An example YAML of a custom build strategy:
 The `exposeDockerSocket` option will mount the Docker socket from host into your
 builder container and allows you to execute the `docker build` and `docker push` commands.
 Note that this might be restricted by the administrator in future.
+
 
