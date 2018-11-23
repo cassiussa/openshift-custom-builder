@@ -1,4 +1,4 @@
-# Custom Builder Image
+# Custom Builder Image for OpenShift
 
 Upon invocation, a custom builder image will receive the following environment variables with the information needed to proceed with the build:
 
