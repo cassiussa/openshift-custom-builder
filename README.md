@@ -2,10 +2,10 @@
 
 ### General
 
-OKD and OpenShift offer a pre-built and already-available builder container named `origin-docker-builder` (OKD) and `ose-docker-builder` (OpenShift).  For most use cases, this builder container image is sufficient.  However from time-to-time it
-may be necessary to create your own custom builder image.  Each builder image must adhere to specific requirements.
+OKD and OpenShift offer pre-built and already-available builder containers named `origin-docker-builder` (OKD) and `ose-docker-builder` (OpenShift).  For most use cases, these images are sufficient.  However from time-to-time it
+may be necessary to create your own.  Each builder image must adhere to specific requirements.
 
-This repository is meant to act as a starting point for your custom builder images.
+This repository is meant to act as a starting point for you to create your own custom builder images.
 
 ------
 
