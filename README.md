@@ -2,13 +2,14 @@
 
 Upon invocation, a custom builder image will receive the following environment variables with the information needed to proceed with the build:
 
-**Table 1. Custom Builder Environment Variables**
 
 ### Variable Descriptions
 
 The `env` option allows you to specify additional environment variables that will
 be passed to the builder container environment. By default, these environment
 variables are passed to the build container:
+
+**Table 1. Custom Builder Environment Variables**
 
 | ENVIRONMENT VARIABLE  | DESCRIPTION |
 | --------------------- | ----------- |
