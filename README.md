@@ -1,4 +1,4 @@
-# Custom Builder Image for OpenShift
+# Custom Builder Image for OpenShift and OKD
 
 Upon invocation, a custom builder image will receive the following environment variables with the information needed to proceed with the build:
 
@@ -18,7 +18,7 @@ variables are passed to the build container:
 | `$SOURCE_URI` | Uses the same value as `$SOURCE_REPOSITORY`. Either can be used. |
 | `$SOURCE_CONTEXT_DIR` | Specifies the subdirectory of the Git repository to be used when building. Only present if defined. |
 | `$SOURCE_REF` | The Git reference to be built. |
-| `$ORIGIN_VERSION` | The version of the OpenShift Container Platform master that created this build object. |
+| `$ORIGIN_VERSION` | The version of the OKD or OpenShift Container Platform master that created this build object. |
 | `$OUTPUT_REGISTRY` | The Docker registry to push the image to. |
 | `$OUTPUT_IMAGE` | The Docker tag name for the image being built. |
 | `$PUSH_DOCKERCFG_PATH` | The path to the Docker credentials for running a `docker push` or `podman push` operation. |
@@ -29,7 +29,7 @@ variables are passed to the build container:
 ### Custom Builder Workflow
 
 
-Although Custom builder image authors have great flexibility in defining the build process, your builder image must still adhere to the following required steps necessary for seamlessly running a build inside of OpenShift Container Platform:
+Although Custom builder image authors have great flexibility in defining the build process, your builder image must still adhere to the following required steps necessary for seamlessly running a build inside of OKD or OpenShift Container Platform:
 
 1.    The `Build` object definition contains all the necessary information about input parameters for the build.
 
