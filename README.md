@@ -1,14 +1,17 @@
 # Custom Builder Image for OpenShift and OKD
 
-Upon invocation, a custom builder image will receive the following environment variables with the information needed to proceed with the build:
+### General
+
+OKD and OpenShift offer a pre-built and already-available builder container named `origin-docker-builder` (OKD) and `ose-docker-builder` (OpenShift).  For most use cases, this builder container image is sufficient.  However from time-to-time it
+may be necessary to create your own custom builder image.  Each builder image must adhere to specific requirements.
+
+This repository is meant to act as a starting point for your custom builder images.
 
 ------
 
 ### Variable Descriptions
 
-The `env` option allows you to specify additional environment variables that will
-be passed to the builder container environment. By default, these environment
-variables are passed to the build container:
+The `env` option allows you to specify additional environment variables that will be passed to the builder container environment. By default, these environment variables are passed to the build container:
 
 **Table 1. Custom Builder Environment Variables**
 
