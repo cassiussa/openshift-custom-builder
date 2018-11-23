@@ -9,6 +9,7 @@ Upon invocation, a custom builder image will receive the following environment v
 The `env` option allows you to specify additional environment variables that will
 be passed to the builder container environment. By default, these environment
 variables are passed to the build container:
+
 | ENVIRONMENT VARIABLE  | DESCRIPTION |
 | --------------------- | ----------- |
 | `$BUILD` | The entire serialized JSON of the Build object definition. If you need to use a specific API version for serialization, you can set the buildAPIVersion parameter in the custom strategy specification of the build configuration. |
