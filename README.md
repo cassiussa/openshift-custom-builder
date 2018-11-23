@@ -56,7 +56,7 @@ An example JSON of a custom build strategy:
 }
 ```
 
-An example YAML of a custom build strategy, using `DOCKER_FILE_PATH` to specify the name of the Dockerfile (similar to `dockerfilePath` when using `dockerStrategy`:
+An example YAML of a custom build strategy, using `DOCKER_FILE_PATH` to specify the name of the Dockerfile (similar to `dockerfilePath` when using `dockerStrategy`).
 
 ```yaml
   strategy:
