@@ -2,6 +2,7 @@
 
 Upon invocation, a custom builder image will receive the following environment variables with the information needed to proceed with the build:
 
+------
 
 ### Variable Descriptions
 
