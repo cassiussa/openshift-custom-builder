@@ -46,7 +46,7 @@ Although Custom builder image authors have great flexibility in defining the bui
 
 The custom build strategy is very similar to *Docker build* strategy, but users might customize the builder image that will be used for build execution. The *Docker build* uses [openshift/origin-docker-builder](https://hub.docker.com/r/openshift/origin-docker-builder/) image by default. Using your own builder image allows you to customize your build process.
 
-An example JSON of a custom build strategy:
+**An example JSON of a custom build strategy:**
 
 ```json
 "strategy": {
@@ -61,7 +61,9 @@ An example JSON of a custom build strategy:
 }
 ```
 
-An example YAML of a custom build strategy, using `DOCKER_FILE_PATH` to specify the name of the Dockerfile (similar to `dockerfilePath` when using `dockerStrategy`).  `DOCKER_FILE_PATH` is available only when using the `build.sh` file included in this repository.
+**An example YAML of a custom build strategy:**
+
+In this example we're using `DOCKER_FILE_PATH` to specify the name of the Dockerfile (similar to `dockerfilePath` when using `dockerStrategy`).  `DOCKER_FILE_PATH` is available only when using the `build.sh` file included in this repository.
 
 ```yaml
   strategy:
