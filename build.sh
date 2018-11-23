@@ -56,9 +56,9 @@ if [ -n "${SOURCE_REF}" ]; then
     exit 1
   fi
   popd
-  docker build --rm -t "${TAG}" "${BUILD_DIR}" -f "${DOCKER_FILE_PATH}"
+  docker build --rm -t "${TAG}" "${BUILD_DIR}" -f "${DOCKERFILE_PATH}"
 else
-  docker build --rm -t "${TAG}" "${SOURCE_REPOSITORY}" -f "${DOCKER_FILE_PATH}"
+  docker build --rm -t "${TAG}" "${SOURCE_REPOSITORY}" -f "${DOCKERFILE_PATH}"
 fi
 
 if [[ -d /var/run/secrets/openshift.io/push ]] && [[ ! -e /root/.dockercfg ]]; then
