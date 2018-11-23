@@ -23,7 +23,7 @@ variables are passed to the build container:
 | `$OUTPUT_IMAGE` | The Docker tag name for the image being built. |
 | `$PUSH_DOCKERCFG_PATH` | The path to the Docker credentials for running a `docker push` or `podman push` operation. |
 | `$DOCKER_SOCKET` | Specifies the path to the Docker socket, if exposing the Docker socket was enabled in the build configuration (if `exposeDockerSocket` was set to `true`.) |
-| `$DOCKER_FILE_PATH` | Specifies the Dockerfile, similar to `spec.strategy.dockerStrategy.dockerfilePath` when using `dockerStrategy` |
+| `$DOCKER_FILE_PATH` | Specifies the Dockerfile, similar to `spec.strategy.dockerStrategy.dockerfilePath` when using `dockerStrategy`.  Only available only when using the `build.sh` file included in this repository, or if you write a similar custom script. |
 
 
 ### Custom Builder Workflow
