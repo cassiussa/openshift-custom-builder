@@ -42,7 +42,7 @@ Although Custom builder image authors have great flexibility in defining the bui
 3.    If your build produces an image, push it to the build’s output location if it is defined. Other output locations can be passed with environment variables.
 
 
-### Custom Build Strategy in `BuildConfiguration`
+### Custom Build Strategy in `BuildConfig`
 
 The custom build strategy is very similar to *Docker build* strategy, but users might customize the builder image that will be used for build execution. The *Docker build* uses [openshift/origin-docker-builder](https://hub.docker.com/r/openshift/origin-docker-builder/) image by default. Using your own builder image allows you to customize your build process.
 
